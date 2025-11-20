@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select } from 'shared/ui/Select';
-import { usePeriodStore } from '../model/period.store';
+import { usePeriodStore, Period } from '../model/period.store';
 import styles from './PeriodSelector.module.css';
 
 export const PeriodSelector: React.FC = () => {
@@ -12,7 +12,7 @@ export const PeriodSelector: React.FC = () => {
       <label className={styles.label}>Период:</label>
       <Select
         value={selectedPeriod}
-        onChange={setPeriod}
+        onChange={(value) => setPeriod(value as Period)}
         options={[
           { value: 'day', label: 'День' },
           { value: 'week', label: 'Неделя' },
