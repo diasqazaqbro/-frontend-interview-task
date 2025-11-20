@@ -1,0 +1,5 @@
+.button {
+  min-width: 40px;
+  padding: var(--spacing-sm);
+}
+
