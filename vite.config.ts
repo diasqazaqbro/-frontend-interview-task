@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig(({ command, mode }) => {
+  const isProduction = command === "build";
+
   return {
     plugins: [react()],
     resolve: {
@@ -15,7 +17,7 @@ export default defineConfig(({ command, mode }) => {
         shared: path.resolve(__dirname, "./src/shared"),
       },
     },
-    base: "/",
+    base: isProduction ? "/-frontend-interview-task/" : "/",
     server: {
       port: 3000,
     },
